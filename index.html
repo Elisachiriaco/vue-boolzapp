@@ -49,7 +49,7 @@
                     <img :src="contact.avatar" alt="avatar">
                     <div class="info">
                         <div :class="name">{{contact.name}}</div>
-                        <div class="textmessage">Ultimo messaggio inviato</div>
+                        <div class="textmessage">{{contact.messages.slice(-1)[0].message}}</div>
                         <!-- <div class="hour">12:00</div> -->
                     </div>
                 </div>
