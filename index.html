@@ -13,41 +13,63 @@
 </head>
 <body>
     <div id="app">
-        <div class="containerapp">
-            <!-- left -->
-            <div class="left">
-                <div class="nav-left">
-                    <!-- nav bar left -->
+        <!-- left -->
+        <div class="left">
+            <div class="nav-left">
+                <!-- nav bar left -->
+                <div class="myicon">
+                    <img src="img/avatar_io.jpg" alt="io">
+                    <span class="myname">Sofia</span>
                 </div>
-
-                <div class="notifiche">
-                    <!-- Ricevi notifiche di nuovi messaggi -->
-                </div>
-
-                <div class="search">
-                    <!-- barra di ricerca -->
-                </div>
-
-                <div class="people">
-                    <!-- lista di persone -->
+                <div class="mybutton">
+                    <i class="fas fa-circle-notch p-1"></i>
+                    <i class="fas fa-comment-alt p-1"></i>
+                    <i class="fas fa-ellipsis-v p-1"></i>
                 </div>
             </div>
 
-            <!-- right -->
-            <div class="right">
-                <div class="nav-right">
-                    <!-- nav bar right -->
-                </div>
-
-                <div class="message">
-                    <!-- messaggi -->
+            <div class="notifiche p-2">
+                <!-- Ricevi notifiche di nuovi messaggi -->
+                <i class="fas fa-bell-slash m-2"></i>
+                <div class="text">
+                    <div>Ricevi notifiche di nuovi messaggi</div>
+                    <a href="#">Attiva notifiche desktop</a>
                 </div>
             </div>
 
-            <footer>
-                <!-- inviare nuovo messaggio -->
-            </footer>
+            <div class="search p-2">
+                <!-- barra di ricerca -->
+                <i class="fas fa-search p-2"></i>
+                <input type="text" placeholder="Cerca o inizia una nuova chat">
+            </div>
+
+            <div class="people">
+                <!-- lista di persone -->
+                <div class="mymessage p-2">
+                    <img src="img/avatar_1.jpg" alt="">
+                    <div class="info">
+                        <div class="name">Michele</div>
+                        <div class="textmessage">Ultimo messaggio inviato</div>
+                        <div class="hour">12:00</div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <!-- right -->
+        <div class="right">
+            <div class="nav-right">
+                <!-- nav bar right -->
+            </div>
+
+            <div class="message">
+                <!-- messaggi -->
+            </div>
+        </div>
+
+        <footer>
+            <!-- inviare nuovo messaggio -->
+        </footer>
 
     </div>
     <script src="js/script.js"></script>
