@@ -75,7 +75,7 @@ a{
     width: 100%;
     background-color: #f7f7f7;
 }
-.fa-search{
+.search .fa-search{
     width: 15%;
     text-align: center;
     background-color: #ffffff;
@@ -94,7 +94,7 @@ a{
     width: 100%;
     background-color: #ffffff;
     overflow-y: scroll;
-    height: 67%;
+    height: 64%;
 }
 .mymessage{
     display: flex;
@@ -109,4 +109,55 @@ a{
     width: 200px; 
     font-size: 15px;
     color: #b1b1b1;
+}
+
+/* right */
+.right{
+    width: 65%;
+}
+/* nav bar right */
+.nav-right{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    padding: 10px 20px 10px 10px;
+    background-color: #eaeaea;
+    border-left: 1px solid lightgrey;
+}
+.message{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 75%;
+    background-image: url(../img/mine.jpg);
+    background-size: contain;
+    overflow-y: scroll;
+}
+.messageinviato{
+    background-color: #d5f9ba;
+}
+.messagericevuto{
+    background-color: #ffffff;
+}
+/* footer */
+.sentmessage{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    padding: 10px 30px;
+    background-color: #eaeaea;
+    border-left: 1px solid lightgrey;
+}
+.sentmessage input{
+    height: 100%;
+    border-radius: 5px;
+    border: 1px solid #eaeaea;
+}
+.sentmessage i {
+    color: #807677;
+    font-size: 20px;
 }
