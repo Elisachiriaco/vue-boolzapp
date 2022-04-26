@@ -45,10 +45,10 @@
 
             <div class="people">
                 <!-- lista di persone -->
-                <div class="mymessage p-2">
-                    <img src="img/avatar_1.jpg" alt="">
+                <div class="mymessage p-2" v-for="(contact,index) in contacts">
+                    <img :src="contact.avatar" alt="avatar">
                     <div class="info">
-                        <div class="name">Michele</div>
+                        <div :class="name">{{contact.name}}</div>
                         <div class="textmessage">Ultimo messaggio inviato</div>
                         <!-- <div class="hour">12:00</div> -->
                     </div>
