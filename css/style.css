@@ -93,7 +93,7 @@ a{
 .people{
     width: 100%;
     background-color: #ffffff;
-    overflow-y: scroll;
+    overflow-y: auto;
     height: 64%;
 }
 .people :hover{
@@ -148,7 +148,7 @@ a{
     height: 75%;
     background-image: url(../img/mine.jpg);
     background-size: contain;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 .message-text{
     position: relative;

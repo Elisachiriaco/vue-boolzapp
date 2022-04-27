@@ -174,12 +174,12 @@ const app = new Vue({
         },
         sendMessage(){
             const newMessage = {
-                date: new Date(),
+                date: dayjs().format('HH:mm'),
                 message: this.message,
                 status: 'sent'
             };
             const rispostaMessage = {
-                date: new Date(),
+                date: dayjs().format('HH:mm'),
                 message: 'Ok',
                 status:'received'
             };
