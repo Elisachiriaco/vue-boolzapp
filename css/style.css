@@ -97,10 +97,10 @@ a{
     height: 64%;
 }
 .people :hover{
-    background-color:lightgray;
+    background-color:#ebebeb;
 }
-.people :active{
-    background-color: grey;
+.active{
+    background-color: #cdcdcd;
 }
 .mymessage{
     display: flex;
@@ -161,6 +161,12 @@ a{
     background-color: #ffffff;
     float: left;
     clear: both;
+}
+.hour{
+    font-size: 8px;
+    display: flex;
+    align-items: end;
+    justify-content: end;
 }
 /* footer */
 .sentmessage{

@@ -165,10 +165,28 @@ const app = new Vue({
             }
         ],
         activeIndex: 0,
+        message: '',
     },
     methods: {
         viewChat(index){
             this.activeIndex = index;
+        },
+        sendMessage(){
+            const newMessage = {
+                date: new Date(),
+                message: this.message,
+                status: 'sent'
+            };
+            const rispostaMessage = {
+                date: new Date(),
+                message: 'Ok',
+                status:'received'
+            };
+            this.contacts[this.activeIndex].messages.push(newMessage);
+            this.message= '';
+            setTimeout(()=>{
+                this.contacts[this.activeIndex].messages.push(rispostaMessage);
+            },2000)
         }
     },
 })

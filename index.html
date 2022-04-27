@@ -45,7 +45,7 @@
 
             <div class="people">
                 <!-- lista di persone -->
-                <div class="mymessage p-2" v-for="(contact,index) in contacts" @click="viewChat(index)">
+                <div class="mymessage p-2" v-for="(contact,index) in contacts" :key="index" :class="{'active': activeIndex === index}" @click="viewChat(index)">
                     <img :src="contact.avatar" alt="avatar">
                     <div class="info">
                         <div :class="name">{{contact.name}}</div>
@@ -78,12 +78,13 @@
                 <!-- messaggi -->
                 <div class="message-text" v-for="(item,index) in contacts[activeIndex].messages" :key="index" :class="item.status === 'sent' ? 'sent' : 'received'">
                     <span>{{item.message}}</span>
+                    <span class="hour">{{item.date}}</span>
                 </div>
             </div>
 
             <div class="sentmessage">
                 <i class="far fa-smile"></i>
-                <input type="text" placeholder="Scrivi un messaggio" size="75">
+                <input type="text" placeholder="Scrivi un messaggio" size="75" v-model="message" @keyup.enter="sendMessage()">
                 <i class="fas fa-microphone"></i>
             </div>
         </div>
