@@ -163,7 +163,12 @@ const app = new Vue({
                     }
                 ],
             }
-        ]
+        ],
+        activeIndex: 0,
     },
-    methods: '',
+    methods: {
+        viewChat(index){
+            this.activeIndex = index;
+        }
+    },
 })

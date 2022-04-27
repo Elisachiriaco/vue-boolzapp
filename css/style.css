@@ -96,6 +96,12 @@ a{
     overflow-y: scroll;
     height: 64%;
 }
+.people :hover{
+    background-color:lightgray;
+}
+.people :active{
+    background-color: grey;
+}
 .mymessage{
     display: flex;
     height: 22%;
@@ -130,19 +136,31 @@ a{
     border-left: 1px solid lightgrey;
 }
 .message{
-    display: flex;
-    flex-direction: column;
     width: 100%;
     height: 75%;
     background-image: url(../img/mine.jpg);
     background-size: contain;
     overflow-y: scroll;
 }
-.messageinviato{
-    background-color: #d5f9ba;
+.message-text{
+    position: relative;
+    margin: 5px 20px;
+    padding: 15px;
+    min-width: 40%;
+    max-width: 60%;
+    background-color: white;
+    border-radius: 10px;
+    font-size: 15px;
 }
-.messagericevuto{
+.message-text.sent{
+    background-color: #d5f9ba;
+    float: right;
+    clear: both;
+}
+.message-text.received{
     background-color: #ffffff;
+    float: left;
+    clear: both;
 }
 /* footer */
 .sentmessage{
