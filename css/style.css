@@ -107,6 +107,7 @@ a{
     height: 22%;
     border-bottom: 1px solid #eaeaea;
     cursor: pointer;
+    position: relative;
 }
 .mymessage img{
     border-radius: 50%;
@@ -115,8 +116,15 @@ a{
     margin-left: 10px;
 }
 .textmessage{
-    width: 200px; 
+    width: 100%; 
     font-size: 15px;
+    color: #b1b1b1;
+}
+.ora{
+    font-size: 10px;
+    position: absolute;
+    top: 10%;
+    right: 2%;
     color: #b1b1b1;
 }
 

@@ -40,17 +40,17 @@
             <div class="search p-2">
                 <!-- barra di ricerca -->
                 <i class="fas fa-search p-2"></i>
-                <input type="text" placeholder="Cerca o inizia una nuova chat">
+                <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="search" @keyup="filterContact()">
             </div>
 
             <div class="people">
                 <!-- lista di persone -->
-                <div class="mymessage p-2" v-for="(contact,index) in contacts" :key="index" :class="{'active': activeIndex === index}" @click="viewChat(index)">
+                <div class="mymessage p-2" v-for="(contact,index) in contacts" :key="index" :class="{'active': activeIndex === index}" @click="viewChat(index)" v-if="contact.visible">
                     <img :src="contact.avatar" alt="avatar">
                     <div class="info">
                         <div :class="name">{{contact.name}}</div>
                         <div class="textmessage">{{contact.messages.slice(-1)[0].message}}</div>
-                        <!-- <div class="hour">12:00</div> -->
+                        <span class="ora">{{contact.messages.slice(-1)[0].date}}</span>
                     </div>
                 </div>
             </div>
@@ -61,10 +61,10 @@
             <div class="nav-right">
                 <!-- nav bar right -->
                 <div class="myicon">
-                    <img src="img/avatar_1.jpg" alt="">
+                    <img :src="contacts[activeIndex].avatar" alt="">
                     <div class="info">
-                        <div class="name">Michele</div>
-                        <div class="textmessage">Ultimo accesso oggi alle 12:00</div>
+                        <div class="name">{{contacts[activeIndex].name}}</div>
+                        <div class="textmessage">Ultimo accesso {{contacts[activeIndex].messages.slice(-1)[0].date}}</div>
                     </div>
                 </div>
                 <div class="mybutton">

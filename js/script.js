@@ -166,6 +166,7 @@ const app = new Vue({
         ],
         activeIndex: 0,
         message: '',
+        search:'',
     },
     methods: {
         viewChat(index){
@@ -187,6 +188,15 @@ const app = new Vue({
             setTimeout(()=>{
                 this.contacts[this.activeIndex].messages.push(rispostaMessage);
             },2000)
+        },
+        filterContact(){
+            this.contacts.forEach((contact)=>{
+                if(contact.name.toLowerCase().includes(this.search.toLowerCase())){
+                    contact.visible = true;
+                } else {
+                    contact.visible = false;
+                }
+            })
         }
     },
 })
