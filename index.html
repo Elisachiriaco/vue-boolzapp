@@ -82,6 +82,13 @@
                 <div class="message-text" v-for="(item,index) in contacts[activeIndex].messages" :key="index" :class="item.status === 'sent' ? 'sent' : 'received'">
                     <span>{{item.message}}</span>
                     <span class="hour">{{item.date}}</span>
+                    <div class="arrow dropdown">
+                        <i class="fa-solid fa-angle-down"></i>
+                        <div class="dropdown-content">
+                            <p>Info messaggio</p>
+                            <span @click="removeMessage(index)">Cancella messaggio</span>
+                            </div>
+                    </div>
                 </div>
             </div>
 

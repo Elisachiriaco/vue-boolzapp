@@ -197,6 +197,9 @@ const app = new Vue({
                     contact.visible = false;
                 }
             })
+        },
+        removeMessage(index){
+            this.contacts[this.activeIndex].messages.splice(index,1)
         }
     },
 })
