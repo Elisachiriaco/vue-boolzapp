@@ -1,6 +1,9 @@
 const app = new Vue({
     el: '#app',
     data: {
+        aggiuntaEmoticon:{
+            display: false
+        },
         contacts: [
             {
                 name: 'Michele',
@@ -173,14 +176,16 @@ const app = new Vue({
             this.activeIndex = index;
         },
         sendMessage(){
+            if(this.message === '') return 
             const newMessage = {
                 date: dayjs().format('HH:mm'),
                 message: this.message,
                 status: 'sent'
             };
+            let randomMessage =['Ok','Ciao','Ma guarda chi si risente!','Come va?','Mi sa che hai sbagliato persona','Novità?'];
             const rispostaMessage = {
                 date: dayjs().format('HH:mm'),
-                message: 'Ok',
+                message: randomMessage[Math.floor(Math.random() * randomMessage.length)],
                 status:'received'
             };
             this.contacts[this.activeIndex].messages.push(newMessage);
@@ -202,6 +207,9 @@ const app = new Vue({
             if(this.contacts[this.activeIndex].messages.length > 0){
             this.contacts[this.activeIndex].messages.splice(index,1)
             } else return;
-        }
+        },
+        addEmoticon(){
+            (this.aggiuntaEmoticon.display == false) ? this.aggiuntaEmoticon.display = true : this.aggiuntaEmoticon.display = false;       
+        },
     },
 })
