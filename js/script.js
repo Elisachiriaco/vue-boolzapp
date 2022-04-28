@@ -199,7 +199,9 @@ const app = new Vue({
             })
         },
         removeMessage(index){
+            if(this.contacts[this.activeIndex].messages.length > 0){
             this.contacts[this.activeIndex].messages.splice(index,1)
+            } else return;
         }
     },
 })

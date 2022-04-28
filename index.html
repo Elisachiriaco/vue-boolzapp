@@ -51,9 +51,9 @@
                 <div class="mymessage p-2" v-for="(contact,index) in contacts" :key="index" :class="{'active': activeIndex === index}" @click="viewChat(index)" v-if="contact.visible">
                     <img :src="contact.avatar" alt="avatar">
                     <div class="info">
-                        <div :class="name">{{contact.name}}</div>
-                        <div class="textmessage">{{contact.messages.slice(-1)[0].message}}</div>
-                        <span class="ora">{{contact.messages.slice(-1)[0].date}}</span>
+                        <div class="name">{{contact.name}}</div>
+                        <div class="textmessage">{{contact.messages.length > 0 ? contact.messages.slice(-1)[0].message : ''}}</div>
+                        <span class="ora">{{contact.messages.length > 0 ? contact.messages.slice(-1)[0].date : ''}}</span>
                     </div>
                 </div>
             </div>
@@ -67,7 +67,7 @@
                     <img :src="contacts[activeIndex].avatar" alt="">
                     <div class="info">
                         <div class="name">{{contacts[activeIndex].name}}</div>
-                        <div class="textmessage">Ultimo accesso {{contacts[activeIndex].messages.slice(-1)[0].date}}</div>
+                        <div class="textmessage">Ultimo accesso {{contacts[activeIndex].messages.length > 0 ? contacts[activeIndex].messages.slice(-1)[0].date : ''}}</div>
                     </div>
                 </div>
                 <div class="mybutton">
