@@ -54,6 +54,9 @@
                         <div class="name">{{contact.name}}</div>
                         <div class="textmessage">{{contact.messages.length > 0 ? contact.messages.slice(-1)[0].message : ''}}</div>
                         <span class="ora">{{contact.messages.length > 0 ? contact.messages.slice(-1)[0].date : ''}}</span>
+                        <div class="delete">
+                            <i class="fa-regular fa-trash-can" @click="deleteContact(index)"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -83,8 +86,8 @@
                     <span>{{item.message}}</span>
                     <span class="hour">{{item.date}}</span>
                     <div class="arrow dropdown">
-                        <i class="fa-solid fa-angle-down"></i>
-                        <div class="dropdown-content">
+                        <i class="fa-solid fa-angle-down"  @click="dropMenu(activeIndex,index)"></i>
+                        <div class="dropdown-content" v-if="item.display">
                             <p>Info messaggio</p>
                             <span @click="removeMessage(index)">Cancella messaggio</span>
                             </div>
@@ -95,7 +98,7 @@
             <div class="sentmessage">
                 <i class="far fa-smile" @click="addEmoticon()"></i>
                 <div class="emoticon" v-if="aggiuntaEmoticon.display">
-                    <span>&#128512 &#128513 &#128514 &#128515&#128516 &#128517 &#128518 &#128519 &#128521 &#128522 &#128523 <br> &#128524 &#128525 &#128526 &#128528 &#128529 &#128530 &#128536 &#128545 &#128548 &#128561 &#129315</span>
+                    <span>&#128512 &#128513 &#128514 &#128515&#128516 &#128517 &#128518 &#128519 &#128521 &#128522 &#128523<br>&#128524 &#128525 &#128526 &#128528 &#128529 &#128530 &#128536 &#128545 &#128548 &#128561 &#129315</span>
                 </div>
                 <input type="text" placeholder="Scrivi un messaggio" size="75" v-model="message" @keyup.enter="sendMessage()">
                 <i class="fas fa-microphone"></i>

@@ -26,7 +26,6 @@ body{
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    min-width: 800px;
     height: 70px;
     padding: 10px 20px 10px 10px;
     background-color: #eaeaea;
@@ -129,6 +128,16 @@ a{
     right: 2%;
     color: #b1b1b1;
 }
+.delete{
+    display: none;
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    font-size:14px;
+}
+.mymessage:hover .delete{
+    display: block;
+}
 
 /* right */
 .right{
@@ -180,19 +189,19 @@ a{
     display: flex;
     align-items: end;
     justify-content: end;
+    color: #b1b1b1;
 }
 .arrow {
     position: absolute;
     z-index: 2;
-    top: 5px;
+    top: 2px;
     right: 5px;
-    color: black;
+    color: #b1b1b1;
     cursor: pointer;
 }
 .dropdown-content {
-    display: none;
     position: absolute;
-    top: 0;
+    top: 20px;
     right: 0;
     z-index: 5;
     background-color: #f9f9f9;
@@ -200,12 +209,9 @@ a{
     box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.5);
     padding: 5px;
     font-size: 14px;
+    color: black;
 }
-  
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
+ 
 /* footer */
 .sentmessage{
     position: relative;
@@ -225,7 +231,7 @@ a{
     border-radius: 5px;
     border: 1px solid #eaeaea;
 }
-.sentmessage i {
+.sentmessage i{
     color: #807677;
     font-size: 20px;
     cursor: pointer;
